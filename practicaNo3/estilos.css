@@ -1,0 +1,44 @@
+<style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+
+        }
+
+        body{
+            display:flex;
+            justify-content:center;
+            align-items: center;
+            background-color:indianred;
+        }
+
+        .container{
+            position:relative;
+        }
+        input{
+            width: 350px;
+            padding: 10px;
+            padding:10px;
+            padding-right: 35px;
+            border-radius: 5px;
+            border:0;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        button{
+            background-color: salmon;
+            padding: 10px 15px;
+            position: absolute;
+            border:0;
+            top:0;
+            bottom:0;
+            right: 0;
+            margin:auto;
+            border-radius: 0 5px 5px 
+            color:0svh;
+        }
+    </style>
