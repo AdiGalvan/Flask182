@@ -1,6 +1,4 @@
-<style>
-
-        *{
+*{
             margin:0;
             padding:0;
             box-sizing: border-box;
@@ -15,14 +13,15 @@
             background-color:indianred;
         }
 
-        .container{
-            position:relative;
+        .buscar{
+            position:sticky;
         }
+
         input{
             width: 350px;
             padding: 10px;
             padding:10px;
-            padding-right: 35px;
+            padding-right: 100px;
             border-radius: 5px;
             border:0;
             outline: none;
@@ -36,9 +35,9 @@
             border:0;
             top:0;
             bottom:0;
-            right: 0;
+            right: 10px ;
             margin:auto;
             border-radius: 0 5px 5px 
-            color:0svh;
+            color: 0svh;
         }
-    </style>
+      

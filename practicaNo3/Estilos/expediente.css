@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(../Imágenes/salud.jpg);
+    background-position: center;
+    background-size: 60vh;
+    }
+
+.expe {
+    width: 800px;
+    background:gray;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family:'Gill Sans MT';
+    color:white;
+    box-shadow: 7px 13px 37px #000;
+}
+
+
+
+.expe h4{
+    font-size: 25px;
+    margin-bottom: 30px;
+    color:black;
+    text-align: center;
+}
+
+.expe h2{
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 1px;
+    color:black;
+    text-align: center;
+}
+
+
+
+.med{
+    width: 425px;
+    background:white;
+    padding: 10px;
+    border-radius: 9px;
+    margin-bottom: 16px;
+    border: 1px solid #1f53c5;
+    font-family: 'Georgia';
+    font-size: 18px;
+    transform: translate(13%, 0%);
+    
+}
+
+
+.datos{
+    width: 250px;
+    background:cadetblue;
+    padding: 10px;
+    border-radius: 9px;
+    margin-bottom: 16px;
+    border: 1px solid blue;
+    font-family: 'Georgia';
+    font-size: 18px;
+    transform: translate(13%, 0%);
+    text-align: left;
+}
+
+.medc{
+    width: 425px;
+    background:white;
+    padding: 10px;
+    border-radius: 9px;
+    margin-bottom: 16px;
+    border: 1px solid #1f53c5;
+    font-family: 'Georgia';
+    font-size: 18px;
+    transform: translate(13%, 0%);
+}
+
+.dato{
+    width: 250px;
+    background:cadetblue;
+    padding: 10px;
+    border-radius: 9px;
+    margin-top: 30px;
+    border: 1px solid blue;
+    font-family: 'Georgia';
+    font-size: 18px;
+    transform: translate(13%, 0%);
+    text-align: left;
+}
+
+.boton{
+    width: 250px;
+    background:cadetblue;
+    padding: 10px;
+    border-radius: 9px;
+    margin-bottom: 1px;
+    border: 1px solid blue;
+    font-family: 'Georgia';
+    font-size: 18px;
+    transform: translate(13%, 0%);
+    text-align: left;
+}
+
+.expe .grd{
+    width: 300px;
+    background:#1f53c5;
+    border: none;
+    padding: 12px;
+    color:white;
+    margin: 16px 0;
+    font-size: 16px;
+    margin-top: 30px;
+    transform: translate(145%, -20%);
+    border-radius: 9px;
+    
+}
+
+input[type="submit"]{
+    cursor: pointer;
+    outline: none; 
+}

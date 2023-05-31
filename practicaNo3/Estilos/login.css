@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(../Imágenes/salud.jpg);
+    background-position: center;
+    background-size: 60vh;
+    }
+
+.register {
+    width: 500px;
+    background:gray;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family:'Gill Sans MT';
+    color:white;
+    box-shadow: 7px 13px 37px #000;
+}
+
+.register h4{
+    font-size: 25px;
+    margin-bottom: 20px;
+    color:black;
+}
+
+.rfc{
+    width: 425px;
+    padding: 10px;
+    border-radius: 9px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    font-family: 'Georgia';
+    font-size: 18px;
+    
+}
+
+
+.pas{
+    width: 425px;
+    padding: 10px;
+    border-radius: 9px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    font-family: 'Georgia';
+    font-size: 18px;
+}
+
+
+.register .login {
+    width: 250px;
+    border: none;
+    padding: 12px;
+    margin: 18px 0;
+    font-size: 17px;
+    transform: translate(30%, -20%);
+    
+}
+
+input[type="submit"]{
+    width: 50%;
+    height: 40px;
+    border: 1px solid;
+    background:rgb(12, 44, 105);
+    border-radius: 15px;
+    font-size: 10px;
+    color:white;
+    font-weight: 70;
+    cursor: pointer;
+    outline: none;
+    
+}
+
+input[type="submit"]:hover {
+    transition: .5s;
+}
