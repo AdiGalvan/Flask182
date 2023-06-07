@@ -1,0 +1,68 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(espacio.jpg);
+    background-position: center;
+    background-size: 60vh;
+    }
+
+.dato {
+    width: 1000px;
+    background:#F3FF00;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family:'Gill Sans MT';
+    color:black;
+    box-shadow: 7px 13px 37px #000;
+}
+
+
+
+.dato h4{
+    font-size: 250px;
+    margin-bottom: 30px;
+    color:black;
+    text-align: center;
+}
+
+
+
+.nom{
+    width: 100px;
+    background:white;
+    padding: 10px;
+    border-radius: 9px;
+    margin-bottom: 16px;
+    border: 1px solid #1f53c5;
+    font-family: 'Georgia';
+    font-size: 18px;
+    transform: translate(13%, 0%);
+    
+}
+
+
+.bot{
+    width: 250px;
+    background:cadetblue;
+    padding: 10px;
+    border-radius: 9px;
+    margin-bottom: 16px;
+    border: 1px solid blue;
+    font-family: 'Georgia';
+    font-size: 18px;
+    transform: translate(13%, 0%);
+    text-align: left;
+}
+
+input[type="submit"]{
+    cursor: pointer;
+    outline: none; 
+}
+
