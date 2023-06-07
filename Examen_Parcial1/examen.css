@@ -12,8 +12,8 @@ body{
     }
 
 .dato {
-    width: 1000px;
-    background:#F3FF00;
+    width: 500px;
+    background:black;
     padding: 30px;
     margin: auto;
     margin-top: 100px;
@@ -24,45 +24,41 @@ body{
 }
 
 
-
 .dato h4{
-    font-size: 250px;
+    font-size: 20px;
     margin-bottom: 30px;
-    color:black;
+    color:#F3FF00;
     text-align: center;
 }
 
-
-
 .nom{
     width: 100px;
-    background:white;
+    background:none;
     padding: 10px;
     border-radius: 9px;
     margin-bottom: 16px;
-    border: 1px solid #1f53c5;
+    border: none;
     font-family: 'Georgia';
     font-size: 18px;
+    color:white;
     transform: translate(13%, 0%);
     
 }
 
 
 .bot{
-    width: 250px;
-    background:cadetblue;
+    width: 103px;
+    background:none;
     padding: 10px;
     border-radius: 9px;
     margin-bottom: 16px;
-    border: 1px solid blue;
+    border: none;
     font-family: 'Georgia';
     font-size: 18px;
+    color:burlywood;
     transform: translate(13%, 0%);
     text-align: left;
 }
 
-input[type="submit"]{
-    cursor: pointer;
-    outline: none; 
-}
+
 
