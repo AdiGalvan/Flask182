@@ -1,4 +1,4 @@
-class Bebida:
+class Almacen:
     def _init_(self, id, nombre, clasificacion, marca, precio):
         self.id = id
         self.nombre = nombre
@@ -15,7 +15,7 @@ def agregar_bebida():
     marca = input("Ingrese la marca de la bebida: ")
     precio = float(input("Ingrese el precio de la bebida: "))
 
-    bebida = Bebida(id, nombre, clasificacion, marca, precio)
+    bebida = Almacen(id, nombre, clasificacion, marca, precio)
     bebidas.append(bebida)
     print("Bebida agregada correctamente.")
 
@@ -68,7 +68,7 @@ def mostrar_bebidas():
             print(f"Marca: {bebida.marca}")
             print(f"Precio: {bebida.precio}")
 
-def calcular_precio_promedio():
+def calcular_promedio():
     if not bebidas:
         print("No hay bebidas registradas.")
     else:
@@ -76,18 +76,19 @@ def calcular_precio_promedio():
         promedio = total / len(bebidas)
         print(f"Precio promedio de las bebidas: {promedio}")
 
-def cantidad_bebidas_marca():
+def cantidad_marca():
     marca = input("Ingrese el nombre de la marca: ")
     cantidad = sum(1 for bebida in bebidas if bebida.marca == marca)
     print(f"Cantidad de bebidas de la marca {marca}: {cantidad}")
 
-def cantidad_bebidas_clasificacion():
+def cantidad_clasificacion():
     clasificacion = input("Ingrese la clasificación: ")
     cantidad = sum(1 for bebida in bebidas if bebida.clasificacion == clasificacion)
     print(f"Cantidad de bebidas de la clasificación {clasificacion}: {cantidad}")
 
 def mostrar_menu():
-    print("** Almacén de Bebidas **")
+    print("========BIENVENIDO AL ALMACEN BEBIDAS==========")
+    print("================OPCIONES==============")
     print("1. Agregar bebida")
     print("2. Eliminar bebida")
     print("3. Actualizar bebida")
@@ -111,16 +112,16 @@ while True:
     elif opcion == "4":
         mostrar_bebidas()
     elif opcion == "5":
-        calcular_precio_promedio()
+        calcular_promedio()
     elif opcion == "6":
-        cantidad_bebidas_marca()
+        cantidad_marca()
     elif opcion == "7":
-        cantidad_bebidas_clasificacion()
+        cantidad_clasificacion()
     elif opcion == "8":
-        print("¡Hasta luego!")
+        print("¡Que tenga excelente dia!")
         break
     else:
-        print("Opción inválida. Por favor, ingrese una opción válida.")
+        print("Error.")
 
     print()
     mostrar_menu()
