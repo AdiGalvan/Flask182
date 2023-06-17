@@ -1,5 +1,5 @@
 
-from flask import Flask 
+from flask import Flask, render_template,request# render_template es la biblioteca/funcion que genera la vista para que se pueda ver
 
 app= Flask(__name__) #declaracion o inicializacion del servidor flask, se declara una variable app 
 
@@ -15,13 +15,20 @@ app.config['MYSQL_BD']= "bdflask" #base de datos a la que se quiere conectar
 #la ruta se compone del nombre de la ruta y su funcion
 @app.route('/')#busca la ruta principal, declaras la ruta quien tiene una diagonal, la diagonal esta por defaut
 def index():#esa ruta necesita una funcion, qui se llama index
-    return "Hola Mundo"# aqui lo que se quiere que hagas
+    return render_template('index.html')# aqui lo que se quiere que hagas
 
 
 
-@app.route('/guardar')
+@app.route('/guardar',methods=['POST'])
 def guardar():
-    return "Se guardo el album de BD"
+    if request.method == 'POST':
+        titulo= request.form['txtTitulo']
+        artista= request.form['txtArtista']
+        anio= request.form['txtAnio']
+        print(titulo,artista,anio)
+
+
+    return "La info del Album llego a su ruta, Amigo ;)"
 
 @app.route('/eliminar')
 def eliminar():
