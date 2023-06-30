@@ -19,8 +19,13 @@ mysql= MySQL(app)
 #ruta index http://localhost:5000
 #la ruta se compone del nombre de la ruta y su funcion
 @app.route('/')#busca la ruta principal, declaras la ruta quien tiene una diagonal, la diagonal esta por defaut
-def index():#esa ruta necesita una funcion, qui se llama index
-    return render_template('index.html')# aqui lo que se quiere que hagas
+def index():#esa ruta necesita una funcion, aqui se llama index
+   curSelect= mysql.connection.cursor()#objeto que va a hacer la selección
+   curSelect.execute('select * from albums')#se usa el objeto creado arriba y esta es la consulta
+   consulta= curSelect.fetchall() #se crea la variable consulta, contiene los elementos de la tabla en una lista
+   print(consulta)
+
+   return render_template('index.html',listAlbums=consulta )# aqui da lo que se quiere que hagas, tambien concatena la ruta que se le manda , lo que hace es abrir la ruta y llevarse la consulta
 
 
 
