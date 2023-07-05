@@ -10,13 +10,7 @@
 </head>
 
 <body>
-    {%with mensajes= get_flashed_messages()%}
-      {% if messages%}
-        {%for msj in mensajes%}
-            <h3> {{ msj }} </h3>
-        {%endfor%}
-      {% endif %}
-    {%endwith%}
+  
 
     <br>
     <br>
@@ -57,7 +51,7 @@
     <td>{{ alb.2 }}</td>
     <td>{{ alb.3 }}</td>
     <td>
-      <a href="#"> Editar </a>
+      <a href="/editar/{{ alb.0 }}" > Editar</a>
       <a href="#"> Eliminar </a>
     </td>
     </tr>
@@ -66,6 +60,13 @@
   </tbody>
 </table>
 
+{%with mensajes= get_flashed_messages() %}
+  {% if mensajes%}
+    {%for msj in mensajes%}
+        <h3> {{ msj }} </h3>
+    {%endfor%}
+  {% endif %}
+{%endwith%}
 </body>
 
 

@@ -43,10 +43,32 @@ def guardar():
     flash('Album Agregado correctamente')
     return redirect(url_for('index'))#redirecciona al index
 
+@app.route('/editar/<id>')
+def editar(id):
+    curEditar=mysql.connection.cursor()
+    curEditar.execute('select * from albums where id= %s ',(id,))
+    consulId= curEditar.fetchone()
+    return render_template('EditarAlbum.html', album= consulId)#render template muestra una vista
+    
+
+@app.route('/actualizar/<id>',methods=['POST'])#actualizar va a estar trabajando con un parametro que es id
+def actualizar(id):#aqui se pasa el parametro id
+    if request.method == 'POST':#se verifica si viene algo con post
+        Vtitulo= request.form['txtTitulo']#despues se vacea en las variables vtitulo, vartista, vanio
+        Vartista= request.form['txtArtista']
+        Vanio= request.form['txtAnio']
+
+        curAct= mysql.connection.cursor()
+        curAct.execute('update albums set titulo=%s, artista= %s, anio=%s where id= %s',(Vtitulo,Vartista,Vanio,id))#procede a ejecutar el query
+        mysql.connection.commit()#con esto se confirma la actualizacion para que sea un hecho que ya se actualizo 
+
+    flash('Album ActualiZado en BD')
+    return redirect(url_for('index'))
 
 
 
-    return "La info del Album llego a su ruta, Amigo ;)"
+
+    
 
 @app.route('/eliminar')
 def eliminar():
