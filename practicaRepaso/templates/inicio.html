@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FRUTERIA "LA TORONJITA"</title>
+
+
+</head>
+
+<body>
+  
+
+    <br>
+    <br>
+    <center> <h1>Fruteria "La Toronjita"</h1> </center>
+    <br>
+    
+
+    <form action="/registrar" method="POST">
+
+    <input type="text" name="txtFruta" placeholder="Nombre fruta">
+    <input type="text" name="txtTemporada" placeholder="Temporada">
+    <input type="number" name="txtPrecio" placeholder="Precio">
+    <input type="text" name="txtStock" placeholder="Stock">
+
+    <button type="submit"> Guardar </button>
+
+    </form>
+
+    <br>
+    <br>
+
+    <a href="/actualizar"> Editar/Eliminar Registro</a>
+    <li><a href="/consultas" class="button1">Registrar Paciente</a></li>
+
+    
+    {%with mensajes= get_flashed_messages() %}
+    {% if mensajes%}
+      {%for msj in mensajes%}
+          <h3> {{ msj }} </h3>
+      {%endfor%}
+    {% endif %}
+  {%endwith%}
+</body>
+
+
+
+</html>

@@ -5,7 +5,7 @@ from flask_mysqldb import MySQL
 app= Flask(__name__) #declaracion o inicializacion del servidor flask, se declara una variable app 
 
 #configuraciones para la base de datos
-app.config['MYSQL_HOST']= "localhost" #en el localhost porque es dinde se coren los servicios que se quieren , se especifica a donde se quiere conectar
+app.config['MYSQL_HOST']= "localhost" #en el localhost porque es donde se corren los servicios que se quieren, se especifica a donde se quiere conectar
 app.config['MYSQL_USER']= "root" #el usuario que se va a utilizar
 app.config['MYSQL_PASSWORD']= ""  # la contraseña, y se esta por default va solo las comillas
 app.config['MYSQL_DB']= "flask" #base de datos a la que se quiere conectar
@@ -64,15 +64,28 @@ def actualizar(id):#aqui se pasa el parametro id
 
     flash('Album ActualiZado en BD')
     return redirect(url_for('index'))
-
-
-
-
     
 
-@app.route('/eliminar')
-def eliminar():
-    return "Se elimino el album de la BD"
+@app.route('/eliminar/<id>')
+def eliminar(id):
+    curEliminar=mysql.connection.cursor()
+    curEliminar.execute('select * from albums where id= %s ',(id,))
+    consultaDel= curEliminar.fetchone()
+    return render_template('EliminarAlbum.html', album= consultaDel)
+
+@app.route('/borrar/<id>',methods=['POST'])
+def borrar(id):
+    if request.method == 'POST':
+        Vtitulo= request.form['txtTitulo']
+        Vartista= request.form['txtArtista']
+        Vanio= request.form['txtAnio']
+
+        curBorrar= mysql.connection.cursor()
+        curBorrar.execute('delete from albums where id= %s',(id))
+        mysql.connection.commit()
+
+    flash('Album Eliminado en BD')
+    return redirect(url_for('index'))
 
 
 #ejecucion del servidor

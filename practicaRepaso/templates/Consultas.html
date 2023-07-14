@@ -1,0 +1,51 @@
+<!DOCTYPE html><html   >    
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<tittle></tittle>
+
+</head>
+<body>
+   
+<center>
+<br>
+
+<h1> Actualizar Fruteria</h1>
+<br>
+<br>
+
+    <form action="/consultas/{{fruta.0}}" method="POST">
+
+        
+        <input type="text" name="txtFruta"value="{{fruta.1}}">
+        <input type="text" name="txtTemporada" value="{{fruta.2}}">
+        <input type="number" name="txtPrecio"value="{{fruta.3}}" >
+        <input type="text" name="txtStock"value="{{fruta.4}}" >
+    
+        <button type="submit"> Actualizar </button>
+    
+        </form>
+</center>
+
+
+  
+  {%with mensajes= get_flashed_messages() %}
+    {% if mensajes%}
+      {%for msj in mensajes%}
+          <h3> {{ msj }} </h3>
+      {%endfor%}
+    {% endif %}
+  {%endwith%}
+  
+  
+  
+  
+  
+
+
+</body>
+
+</html>

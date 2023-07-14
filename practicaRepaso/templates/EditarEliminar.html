@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Consultas</title>
+
+
+</head>
+
+<body>
+  
+
+    <br>
+    <br>
+    <center> <h1>Consultas Fruteria</h1> </center>
+    <br>
+    
+
+    <form action="/actualizar/{{ fruta.0 }}" method="POST">
+      <input type="text" name="txtFruta"value="{{fruta.1}}">
+      <input type="text" name="txtTemporada" value="{{fruta.2}}">
+      <input type="number" name="txtPrecio"value="{{fruta.3}}">
+      <input type="text" name="txtStock"value="{{fruta.4}}">
+  
+      <button type="submit"> Actualizar </button>
+
+
+    </form>
+
+    <br>
+    <br>
+
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <td>Id:</td>
+      <td>Fruta:</td>
+      <td>Temporada</td>
+      <td>Precio</td>
+      <td>Stock</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    {%for fruta in listFrutas %}
+    <tr>
+    <td>{{ fruta.0 }}</td>
+    <td>{{ fruta.1 }}</td>
+    <td>{{ fruta.2 }}</td>
+    <td>{{ fruta.3 }}</td>
+    <td>{{ fruta.4 }}</td>
+    <td>
+      <a href="/editar/{{fruta.0}}" > Editar</a>
+      <a href="/eliminar/{{fruta.0}}"> Eliminar </a>
+    </td>
+    </tr>
+
+    {%endfor%}
+  </tbody>
+</table>
+
+{%with mensajes= get_flashed_messages() %}
+  {% if mensajes%}
+    {%for msj in mensajes%}
+        <h3> {{ msj }} </h3>
+    {%endfor%}
+  {% endif %}
+{%endwith%}
+</body>
+
+
+
+</html>
