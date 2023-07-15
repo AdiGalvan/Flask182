@@ -20,7 +20,7 @@ def ingresar():
    curSelect.execute('select * from tbflores')
    consulta= curSelect.fetchall() 
 
-   return render_template('ingresar.html' )
+   return render_template('ingresar.html',flores=consulta  )
 
 
 
@@ -42,12 +42,12 @@ def registrar():
 @app.route('/editar/<id>')
 def editar(id): 
     curEditar=mysql.connection.cursor()
-    curEditar.execute('select * from tbfrutas where id= %s ',(id,))
+    curEditar.execute('select * from tbflor where id= %s ',(id,))
     consultaId= curEditar.fetchone()
-    return render_template('EditarEliminar.html', fruta= consultaId)
+    return render_template('consultas.html', flores= consultaId)
     
 
-@app.route('/actualizar/<id>',methods=['POST'])
+@app.route('/actualizar/<id>',methods=['POST','GET'])
 def actualizar(id):
     if request.method == 'POST':
       Vnombre= request.form['txtNombre']
