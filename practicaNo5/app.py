@@ -62,7 +62,7 @@ def actualizar(id):#aqui se pasa el parametro id
         curAct.execute('update albums set titulo=%s, artista= %s, anio=%s where id= %s',(Vtitulo,Vartista,Vanio,id))#procede a ejecutar el query
         mysql.connection.commit()#con esto se confirma la actualizacion para que sea un hecho que ya se actualizo 
 
-    flash('Album ActualiZado en BD')
+    flash('Album Actualizado en la BD')
     return redirect(url_for('index'))
     
 
@@ -81,7 +81,7 @@ def borrar(id):
         Vanio= request.form['txtAnio']
 
         curBorrar= mysql.connection.cursor()
-        curBorrar.execute('delete from albums where id= %s',(id))
+        curBorrar.execute('delete from albums where id= %s',(id,))
         mysql.connection.commit()
 
     flash('Album Eliminado en BD')

@@ -16,19 +16,20 @@ function confirmacion(){
 <center>
 <br>
 
-<h1> Eliminar album</h1>
+<h1 class="display-8 text-center mt-3 mb-3 text-info"> Eliminar album</h1>
 <br>
 <br>
+<div class="container"> 
 
     <form action="/borrar/{{album.0}}" method="POST">
 
-        <input type="text" name="txtTitulo" value="{{album.1}}">
-        <input type="text" name="txtArtista" value="{{album.2}}">
-        <input type="number" name="txtAnio" value="{{album.3}}">
+        <input type="button" class="btn btn-success"Success name="txtTitulo" value="{{album.1}}">
+        <input type="button" class="btn btn-success"Success name="txtArtista" value="{{album.2}}">
+        <input type="button" class="btn btn-success"Success name="txtAnio" value="{{album.3}}">
     
-        <input type="submit" name= "Eliminar" value= "Eliminar" onclick= 'return confirmacion()'>
+        <button type="submit" class="btn btn-outline-warning" Warning onclick= 'return confirmacion()'>Eliminar<i class="bi bi-trash3"></i></button>
         
         </form>
 </center>
-
+</div>
 {%endblock%}
